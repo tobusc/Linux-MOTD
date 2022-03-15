@@ -14,10 +14,8 @@ let horas=$((${actividad}/3600%24))
 let dias=$((${actividad}/86400))
 uptime=`printf "%d dias, %02dh%02dm%02ds" "$dias" "$horas" "$mins" "$seg"`
 echo Uptime: $uptime
-
 weid=$(cat /root/modbus/weid.txt)
 echo We ID: $weid
-
-serial=$(cat /proc/cpuinfo | grep Serial | cut -d ' ' -f 2)
+serial=$(cat /proc/cpuinfo | grep Serial | cut -d " " -f 2)
 echo Serial: $serial
 ' > /etc/update-motd.d/10-uname
