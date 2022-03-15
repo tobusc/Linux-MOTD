@@ -16,6 +16,6 @@ uptime=`printf "%d dias, %02dh%02dm%02ds" "$dias" "$horas" "$mins" "$seg"`
 echo Uptime: $uptime
 weid=$(cat /root/modbus/weid.txt)
 echo We ID: $weid
-serial=$(cat /proc/cpuinfo | grep Serial | cut -d " " -f 2)
+serial=$(cat /sys/firmware/devicetree/base/serial-number)
 echo Serial: $serial
 ' > /etc/update-motd.d/10-uname
